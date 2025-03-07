@@ -1,0 +1,22 @@
+name: Deploy
+on: [push, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        run: |
+          echo "Hello, world!"
+          echo "Goodbye, world!"
+      - name: Execute tests
+        run: echo "pnpm test"
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        run: |
+          echo "Hello, world!"
+          echo "Goodbye, world!"
+      - name: Install dependencies
+        run: echo "pnpm install"
